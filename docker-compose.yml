@@ -6,7 +6,7 @@ services:
     container_name: flask-volume-app
     working_dir: /app
     volumes:
-      - ./app:/app # Mount source code
+      - /volume1/docker/firefly/redis:/app:rw
     ports:
       - "6001:80"
     command: >
