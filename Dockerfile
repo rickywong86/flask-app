@@ -6,6 +6,8 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
+RUN chmod +x start.sh
+
 EXPOSE 6001
 
-CMD sh -c "echo 'Installed packages:' && pip list && echo 'Starting app...' && python app.py"
+CMD ["./start.sh"]
