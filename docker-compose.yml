@@ -6,7 +6,7 @@ services:
     container_name: flask-volume-app
     working_dir: /
     volumes:
-      - /volume1/docker/firefly/redis:/:rw
+      - /volume1/docker/flask_app/app:/:rw
     ports:
       - "6001:80"
     command: >
