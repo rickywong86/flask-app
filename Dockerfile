@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 6001
 
-CMD ["python", "app.py"]
+CMD sh -c "echo 'Installed packages:' && pip list && echo 'Starting app...' && python app.py"
