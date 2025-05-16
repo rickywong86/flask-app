@@ -2,13 +2,7 @@ version: '3.9'
 
 services:
   flask:
-    image: python:3.11-slim
-    container_name: flask-volume-app
-    working_dir: /app
-    volumes:
-      - /volume1/docker/flask_app/app:/app:rw
+    build: .
+    container_name: flask-app
     ports:
       - "6001:80"
-    command: >
-      sh -c "pip install -r requirements.txt &&
-             python app.py"
