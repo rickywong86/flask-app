@@ -8,4 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 6001
 
-CMD ["python", "app.py"]
+CMD ["sh", "-c", "sleep 300"]
+
+# CMD ["python", "app.py"]
