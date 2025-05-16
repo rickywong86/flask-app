@@ -2,13 +2,13 @@ version: '3.9'
 
 services:
   flask:
-    build: .
-    container_name: flask-compose-app
+    image: python:3.11-slim
+    container_name: flask-volume-app
+    working_dir: /app
+    volumes:
+      - ./app:/app # Mount source code
     ports:
       - "6001:80"
-    restart: always
-    volumes:
-      - myapp: /home/node/app
-volumes:
-  myapp:
-    external: true
+    command: >
+      sh -c "pip install -r requirements.txt &&
+             python app.py"
