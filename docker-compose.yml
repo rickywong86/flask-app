@@ -4,5 +4,6 @@ services:
   flask:
     build: .
     container_name: flask-app
+    pull_policy: build
     ports:
       - "${port}:${port}"
